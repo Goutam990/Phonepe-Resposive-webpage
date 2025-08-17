@@ -19,30 +19,18 @@
   margin: 0 auto;
   z-index: 1000;
   background-color: white;
-}
-
-.logo {
-  display: flex;
-  align-items: center;
-  gap: 8px; /* spacing without padding */
-  margin-left: 20px;
+  position: relative;
 }
 
 .logo img {
   height: 50px;
 }
 
-.logo span {
-  font-size: 20px;
-  font-weight: bold;
-  color: #5f259f;
-}
-
 .nav-links {
   display: flex;
   list-style: none;
   margin-right: 20px;
-  gap: 30px; /* spacing without padding */
+  gap: 30px;
 }
 
 .nav-links a {
@@ -55,23 +43,61 @@
   color: #5f259f;
 }
 
+/* Mobile image - hidden by default */
+#mobile-image {
+  display: none;
+  height: 30px;
+  margin-right: 15px;
+}
+
+/* iPad mini (768px and below) */
+@media screen and (max-width: 768px) {
+  .nav-links {
+    display: none;
+  }
+
+  #mobile-image {
+    display: block;
+  }
+}
+
+@media screen and (max-width: 375px) {
+  .nav-links {
+    display: none;
+  }
+
+  #mobile-image {
+    display: block;
+  }
+}
+
 /* Full viewport image */
-.hero{
-  background-color: pink;
+.hero {
+  /* background-color: pink; */
 }
 .hero img {
   width: 100%;
-  height: 300px% /* full viewport height */
-  background-color : pink;
-  top:0;
+  height: 300px; /* full viewport height */
+  background-color: pink;
+  top: 0;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+/* media query */
+@media screen and (max-width: 400px) {
+  .hero img {
+    width: 100%;
+    height: 200px; /* full viewport height */
+    background-color: pink;
+    top: 0;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+  }
 }
 
 /* cards */
 .card-container {
   width: 90%;
   margin-top: 4em;
-
   display: flex;
   justify-content: center;
   gap: 20px; /* space between cards */
@@ -79,7 +105,6 @@
   margin: 40px;
   /* background-color: blue; */
   margin: 0 auto;
-
 }
 
 .card {
@@ -122,9 +147,17 @@
   right: 20px;
 }
 
+/* Mobile Responsive (≤375px) */
+@media screen and (max-width: 400px) {
+  .card-container {
+    flex-direction: column;
+    justify-content: center;
+  }
+}
+
 /* section 1 */
 .upi-section {
-  background: url('bg-image.png') no-repeat center/cover;
+  background: url("bg-image.png") no-repeat center/cover;
   padding: 40px 20px;
   text-align: center;
   border-radius: 20px;
@@ -229,7 +262,7 @@
 }
 
 .travel-container h2 {
-  color: #3D3256;
+  color: #3d3256;
   font-size: 28px;
   margin-bottom: 15px;
 }
@@ -254,7 +287,7 @@
   padding: 25px 20px;
   background: white;
   border-radius: 10px;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
 }
 
 .travel-card img {
@@ -264,7 +297,7 @@
 }
 
 .travel-card h4 {
-  color: #3D3256;
+  color: #3d3256;
   font-size: 18px;
   margin-bottom: 15px;
 }
@@ -281,9 +314,20 @@
   margin-bottom: 8px;
 }
 
+/* media query -- travel-card */
+@media screen and (max-width: 375px) {
+  .travel-card {
+    width: 200px;
+    padding: 5px 5px;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+  }
+}
+
 /* .international-section*/
 .international-section {
-  background: #3B2968; /* Navy blue */
+  background: #3b2968; /* Navy blue */
   border-radius: 20px;
   max-width: 800px;
   margin: 0 auto;
@@ -321,9 +365,22 @@
 
 /* Safety section */
 
-.safety-image img{
+.safety-image img {
   width: 100%;
   height: 100px;
+}
+
+/* boy image */
+/* responsive boy img -  */
+
+@media screen and (max-width: 768px) {
+  #boy-img {
+    /* border: 2px solid black; */
+    border-radius: none;
+    width: 100%;
+    height: auto;
+    max-width: 375px;
+  }
 }
 
 /* savings section */
@@ -334,7 +391,7 @@
 }
 
 .savings-section h2 {
-  color: #3D3256;
+  color: #3d3256;
   font-size: 38px;
   font-family: Arial, sans-serif;
   margin: 10px 0;
@@ -357,7 +414,7 @@
 .investment-card {
   display: flex;
   gap: 20px;
-  background: #FFFFFF;
+  background: #ffffff;
   padding: 30px;
   margin-bottom: 20px;
   border-radius: 8px;
@@ -417,7 +474,7 @@
 }
 
 .logo h3 {
-  color: #3D3256;
+  color: #3d3256;
   font-size: 16px;
   margin: 0;
 }
@@ -428,7 +485,7 @@
 }
 
 .footer-col h4 {
-  color: #3D3256;
+  color: #3d3256;
   font-size: 16px;
   margin-bottom: 15px;
 }
@@ -447,7 +504,7 @@
 }
 
 .footer-col li:hover {
-  color: #5E2B9D;
+  color: #5e2b9d;
 }
 
 .footer-bottom {
@@ -457,7 +514,7 @@
 }
 
 .download-btn {
-  background: #5E2B9D;
+  background: #5e2b9d;
   color: white;
   border: none;
   padding: 10px 20px;
